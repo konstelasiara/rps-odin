@@ -4,8 +4,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let humanPrompt =  prompt("You may enter your choice");
-  let humanChoice = humanPrompt;
+  let humanChoice =  prompt("You may enter your choice");
   return humanChoice.charAt(0).toUpperCase() +
   humanChoice.slice(1).toLowerCase();
 }

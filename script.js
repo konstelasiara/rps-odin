@@ -9,16 +9,14 @@ function getComputerChoice() {
   return Math.floor((Math.random() * numOfChoices) + 1);
 }
 
-function playRound() {
-  /* 
-  possible to-dos:
-  - how to store a value in a function and make it usable anywhere?
-    - store it in a variable?
-  
-  */
+// to contain values from functs above
+let humanChoice;
+let computerChoice;
 
-  let humanChoice = getHumanChoice();
-  let computerChoice = getComputerChoice();
+function playRound() {
+  humanChoice = getHumanChoice();
+  computerChoice = getComputerChoice();
 }
 
-// I have a massive burnout aaaaaa plssss get back to this later
+playRound(); // call the func first to generate values
+console.log(`Human chose ${humanChoice}, Computer chose ${computerChoice}`) //retrieve it in template literals

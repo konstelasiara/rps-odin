@@ -35,9 +35,9 @@ function playRound() {
 
 }
 
-playRound();
-let resultRound =  playRound();
-console.log(resultRound);
+playRound(); // generate value
+let resultRound =  playRound(); //containing the value from playRound bc it just didn't show up like that apparently, NOTE: reread functions and return statement again
+console.log(resultRound); // now the actual result
 
 // function playGame() {
   

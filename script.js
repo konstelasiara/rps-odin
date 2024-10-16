@@ -6,17 +6,42 @@ function getHumanChoice() {
 
 function getComputerChoice() {
   let numOfChoices = 3;
-  return Math.floor((Math.random() * numOfChoices) + 1);
+  let numRes = Math.floor(Math.random() * numOfChoices);
+  let optComputer = ["Rock", "Paper", "Scissors"];
+  return optComputer[numRes];
 }
 
 // to contain values from functs above
-let humanChoice;
-let computerChoice;
+let humanChoice = getHumanChoice();
+let computerChoice = getComputerChoice();
+
+console.log(humanChoice);
+console.log(computerChoice);
+
+console.log(`You chose ${humanChoice}, Computer chose ${computerChoice}`) //retrieve it in template literals
 
 function playRound() {
-  humanChoice = getHumanChoice();
-  computerChoice = getComputerChoice();
+  if (humanChoice === "Rock" && computerChoice === "Scissors" ||
+    humanChoice === "Paper" && computerChoice === "Rock" ||
+    humanChoice === "Scissors" && computerChoice === "Paper") {
+      return "Congrats! You win!"
+    } else if (humanChoice === "Scissors" && computerChoice === "Rock" ||
+      humanChoice === "Rock" && computerChoice === "Paper" ||
+      humanChoice === "Paper" && computerChoice === "Scissors") {
+        return "Uh oh! You lose!"
+      } else {
+        return "It's a draw!"
+      }
+
 }
 
-playRound(); // call the func first to generate values
-console.log(`Human chose ${humanChoice}, Computer chose ${computerChoice}`) //retrieve it in template literals
+playRound();
+let resultRound =  playRound();
+console.log(resultRound);
+
+// function playGame() {
+  
+// }
+
+// playGame();
+// console.log(playGame());

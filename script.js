@@ -1,7 +1,14 @@
 function getHumanChoice() {
-  let humanPrompt =  prompt("You may enter your choice");
-  return humanPrompt.charAt(0).toUpperCase() +
-  humanPrompt.slice(1).toLowerCase();
+  let acceptedChoices = ["Rock", "Paper", "Scissors"];
+  let humanPrompt;
+
+  // checking if the input is valid
+  do {
+    humanPrompt = prompt("You may enter your choice: Rock, Paper, or Scissors").toLowerCase();
+    humanPrompt = humanPrompt.charAt(0).toUpperCase() + humanPrompt.slice(1).toLowerCase();
+  } while (!acceptedChoices.includes(humanPrompt))
+  
+  return humanPrompt;
 }
 
 function getComputerChoice() {
@@ -17,6 +24,7 @@ let computerChoice = getComputerChoice();
 
 let humanScore = 0;
 let computerScore = 0;
+let drawScore = 0;
 
 console.log(humanChoice);
 console.log(computerChoice);
@@ -35,13 +43,13 @@ function playRound() {
         computerScore++
         return "Uh oh! You lose!"
       } else {
+        drawScore++
         return "It's a draw!"
       }
 
 }
 
-let resultRound =  playRound();
-console.log(resultRound);
+console.log(playRound());
 
 console.log(`Your score: ${humanScore}`);
 console.log(`Computer score: ${computerScore}`);

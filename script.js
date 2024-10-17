@@ -1,14 +1,15 @@
 function getHumanChoice() {
   let acceptedChoices = ["Rock", "Paper", "Scissors"];
   let humanPrompt;
+  let humanOpt;
 
   // checking if the input is valid
   do {
     humanPrompt = prompt("You may enter your choice: Rock, Paper, or Scissors").toLowerCase();
-    humanPrompt = humanPrompt.charAt(0).toUpperCase() + humanPrompt.slice(1).toLowerCase();
-  } while (!acceptedChoices.includes(humanPrompt))
+    humanOpt = humanPrompt.charAt(0).toUpperCase() + humanPrompt.slice(1).toLowerCase();
+  } while (!acceptedChoices.includes(humanOpt))
   
-  return humanPrompt;
+  return humanOpt;
 }
 
 function getComputerChoice() {

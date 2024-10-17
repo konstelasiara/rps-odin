@@ -36,22 +36,21 @@ function playRound() {
   if (humanChoice === "Rock" && computerChoice === "Scissors" ||
     humanChoice === "Paper" && computerChoice === "Rock" ||
     humanChoice === "Scissors" && computerChoice === "Paper") {
-        humanScore++
-        return "Congrats! You win!"
+        humanScore++;
+        console.log("Congrats! You win!");
     } else if (humanChoice === "Scissors" && computerChoice === "Rock" ||
       humanChoice === "Rock" && computerChoice === "Paper" ||
       humanChoice === "Paper" && computerChoice === "Scissors") {
-        computerScore++
-        return "Uh oh! You lose!"
+        computerScore++;
+        console.log("Uh oh! You lose!");
       } else {
-        drawScore++
-        return "It's a draw!"
+        drawScore++;
+        console.log("It's a draw!");
       }
 
+  console.log(`Your score: ${humanScore}`);
+  console.log(`Computer score: ${computerScore}`);
+  console.log(`Draw tally: ${drawScore}`);
 }
 
-console.log(playRound());
-
-console.log(`Your score: ${humanScore}`);
-console.log(`Computer score: ${computerScore}`);
-console.log(`Draw tally: ${drawScore}`);
+playRound();

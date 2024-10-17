@@ -53,3 +53,4 @@ console.log(playRound());
 
 console.log(`Your score: ${humanScore}`);
 console.log(`Computer score: ${computerScore}`);
+console.log(`Draw tally: ${drawcore}`);

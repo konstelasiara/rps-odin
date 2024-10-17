@@ -15,6 +15,9 @@ function getComputerChoice() {
 let humanChoice = getHumanChoice();
 let computerChoice = getComputerChoice();
 
+let humanScore = 0;
+let computerScore = 0;
+
 console.log(humanChoice);
 console.log(computerChoice);
 
@@ -24,10 +27,12 @@ function playRound() {
   if (humanChoice === "Rock" && computerChoice === "Scissors" ||
     humanChoice === "Paper" && computerChoice === "Rock" ||
     humanChoice === "Scissors" && computerChoice === "Paper") {
-      return "Congrats! You win!"
+        humanScore++
+        return "Congrats! You win!"
     } else if (humanChoice === "Scissors" && computerChoice === "Rock" ||
       humanChoice === "Rock" && computerChoice === "Paper" ||
       humanChoice === "Paper" && computerChoice === "Scissors") {
+        computerScore++
         return "Uh oh! You lose!"
       } else {
         return "It's a draw!"
@@ -35,13 +40,8 @@ function playRound() {
 
 }
 
-playRound(); // generate value
-let resultRound =  playRound(); //containing the value from playRound bc it just didn't show up like that apparently, NOTE: reread functions and return statement again
-console.log(resultRound); // now the actual result
+let resultRound =  playRound();
+console.log(resultRound);
 
-// function playGame() {
-  
-// }
-
-// playGame();
-// console.log(playGame());
+console.log(`Your score: ${humanScore}`);
+console.log(`Computer score: ${computerScore}`);

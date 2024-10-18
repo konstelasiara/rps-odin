@@ -3,7 +3,7 @@ function getHumanChoice() {
   let humanPrompt;
   let humanOpt;
 
-  // checking if the input is valid
+  // prompt & checking if the input is valid
   do {
     humanPrompt = prompt("You may enter your choice: Rock, Paper, or Scissors").toLowerCase();
     humanOpt = humanPrompt.charAt(0).toUpperCase() + humanPrompt.slice(1).toLowerCase();
@@ -20,19 +20,23 @@ function getComputerChoice() {
 }
 
 // to contain values from functs above
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
-
 let humanScore = 0;
 let computerScore = 0;
 let drawScore = 0;
 
-console.log(humanChoice);
-console.log(computerChoice);
-
-console.log(`You chose ${humanChoice}, Computer chose ${computerChoice}`) //retrieve it in template literals
-
 function playRound() {
+  // trigger the choices functions
+  let humanChoice = getHumanChoice();
+  let computerChoice = getComputerChoice();
+
+  // shows up options for each choice functions
+  console.log(humanChoice);
+  console.log(computerChoice);
+
+  //retrieve it in template literals
+  console.log(`You chose ${humanChoice}, Computer chose ${computerChoice}`);
+
+  // compare each choices
   if (humanChoice === "Rock" && computerChoice === "Scissors" ||
     humanChoice === "Paper" && computerChoice === "Rock" ||
     humanChoice === "Scissors" && computerChoice === "Paper") {
@@ -47,10 +51,33 @@ function playRound() {
         drawScore++;
         console.log("It's a draw!");
       }
+}
 
+function playGame() {
+  // triggers a 5 rounds game
+  playRound();
+  playRound();
+  playRound();
+  playRound();
+  playRound();
+
+  // scoring
   console.log(`Your score: ${humanScore}`);
   console.log(`Computer score: ${computerScore}`);
   console.log(`Draw tally: ${drawScore}`);
 }
 
-playRound();
+// declare game result
+function gameResult() {
+  if (humanScore > computerScore) {
+    console.log("Congrats, you win the game!");
+  } else if (computerScore > humanScore) {
+    console.log("You lose... too bad...");
+  } else {
+    console.log("No one wins~");
+  }
+}
+
+
+playGame();
+gameResult();

@@ -54,12 +54,11 @@ function playRound() {
 }
 
 function playGame() {
-  // triggers a 5 rounds game
-  playRound();
-  playRound();
-  playRound();
-  playRound();
-  playRound();
+  // triggers a 5 rounds game by looping playRound() function
+  for (let i = 0; i < 5; i++) {
+    playRound();
+  }
+  
 
   // scoring
   console.log(`Your score: ${humanScore}`);

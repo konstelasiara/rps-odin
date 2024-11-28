@@ -1,16 +1,15 @@
-function getHumanChoice() {
-  let acceptedChoices = ["Rock", "Paper", "Scissors"];
-  let humanPrompt;
-  let humanOpt;
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
 
-  // prompt & checking if the input is valid
-  do {
-    humanPrompt = prompt("You may enter your choice: Rock, Paper, or Scissors").toLowerCase();
-    humanOpt = humanPrompt.charAt(0).toUpperCase() + humanPrompt.slice(1).toLowerCase();
-  } while (!acceptedChoices.includes(humanOpt))
-  
-  return humanOpt;
-}
+rock.addEventListener("click", () => playRound("Rock"));
+paper.addEventListener("click", () => playRound("Paper"))
+scissors.addEventListener("click", () => playRound("Scissors"));
+
+// to contain scores
+let humanScore = 0;
+let computerScore = 0;
+let drawScore = 0;
 
 function getComputerChoice() {
   let numOfChoices = 3;
@@ -19,14 +18,8 @@ function getComputerChoice() {
   return optComputer[numRes];
 }
 
-// to contain values from functs above
-let humanScore = 0;
-let computerScore = 0;
-let drawScore = 0;
-
-function playRound() {
+function playRound(humanChoice) {
   // trigger the choices functions
-  let humanChoice = getHumanChoice();
   let computerChoice = getComputerChoice();
 
   // shows up options for each choice functions
@@ -53,11 +46,6 @@ function playRound() {
       }
 }
 
-// function playGame() {
-//   // triggers a 5 rounds game by looping playRound() function
-//   for (let i = 0; i < 5; i++) {
-//     playRound();
-//   }
   
 
 //   // scoring

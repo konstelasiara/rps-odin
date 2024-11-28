@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Jaro", sans-serif;
+  font-size: 10px;
+}
+
+body {
+  background-color: #1864ab;
+}
+
+.title,
+.line {
+  text-align: center;
+  color: #fcc419;
+}
+
+.title {
+  font-size: 4.8rem;
+}
+
+.line {
+  font-size: 3.6rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container button {
+  font-size: 5rem;
+  border: none;
+  margin: 1rem;
+  padding: 0.8rem;
+}
+
+#result p {
+  font-size: 2rem;
+  color: #fcc419;
+  text-align: center;
+}
+
+#reset {
+  display: block;
+  margin: 0 auto;
+  font-family: "Jaro", sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+}

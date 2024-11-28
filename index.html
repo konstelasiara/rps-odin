@@ -6,12 +6,16 @@
     <title>Rock Paper Scissors</title>
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <h1>Rock Paper Scissors</h1>
+    <h1 class="title">Rock Paper Scissors</h1>
     <p class="line">Your choice is:</p>
-    <div class="container">
+    <div class="button-container">
       <button id="rock">✊</button>
       <button id="paper">🤚</button>
       <button id="scissors">✌️</button>
@@ -21,9 +25,8 @@
       <p id="choices"></p>
       <p id="outcome"></p>
       <p id="score"></p>
+      <p id="announce"></p>
     </div>
-
-    <p id="announce"></p>
 
     <button id="reset">Reset Game</button>
   </body>

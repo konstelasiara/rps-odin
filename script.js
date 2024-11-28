@@ -2,6 +2,10 @@ const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 
+const choices = document.querySelector("#choices");
+const outcome =  document.querySelector("#outcome");
+const score = document.querySelector("#score");
+
 rock.addEventListener("click", () => playRound("Rock"));
 paper.addEventListener("click", () => playRound("Paper"))
 scissors.addEventListener("click", () => playRound("Scissors"));
@@ -22,28 +26,28 @@ function playRound(humanChoice) {
   // trigger the choices functions
   let computerChoice = getComputerChoice();
 
-  // shows up options for each choice functions
-  console.log(humanChoice);
-  console.log(computerChoice);
+  //retrieve the result on page
+  choices.textContent = `You chose ${humanChoice}, Computer chose ${computerChoice}`;
 
-  //retrieve it in template literals
-  console.log(`You chose ${humanChoice}, Computer chose ${computerChoice}`);
-
+  let result = "";
   // compare each choices
   if (humanChoice === "Rock" && computerChoice === "Scissors" ||
     humanChoice === "Paper" && computerChoice === "Rock" ||
     humanChoice === "Scissors" && computerChoice === "Paper") {
         humanScore++;
-        console.log("Congrats! You win!");
+        result = "Congrats! You win!";
     } else if (humanChoice === "Scissors" && computerChoice === "Rock" ||
       humanChoice === "Rock" && computerChoice === "Paper" ||
       humanChoice === "Paper" && computerChoice === "Scissors") {
         computerScore++;
-        console.log("Uh oh! You lose!");
+        result = "Uh oh! You lose!";
       } else {
         drawScore++;
-        console.log("It's a draw!");
+        result = "It's a draw!";
       }
+
+  outcome.textContent = result;
+  score.textContent = `You: ${humanScore} v. Computer: ${computerScore}`
 }
 
   

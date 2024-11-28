@@ -53,30 +53,30 @@ function playRound() {
       }
 }
 
-function playGame() {
-  // triggers a 5 rounds game by looping playRound() function
-  for (let i = 0; i < 5; i++) {
-    playRound();
-  }
+// function playGame() {
+//   // triggers a 5 rounds game by looping playRound() function
+//   for (let i = 0; i < 5; i++) {
+//     playRound();
+//   }
   
 
-  // scoring
-  console.log(`Your score: ${humanScore}`);
-  console.log(`Computer score: ${computerScore}`);
-  console.log(`Draw tally: ${drawScore}`);
-}
+//   // scoring
+//   console.log(`Your score: ${humanScore}`);
+//   console.log(`Computer score: ${computerScore}`);
+//   console.log(`Draw tally: ${drawScore}`);
+// }
 
 // declare game result
-function gameResult() {
-  if (humanScore > computerScore) {
-    console.log("Congrats, you win the game!");
-  } else if (computerScore > humanScore) {
-    console.log("You lose... too bad...");
-  } else {
-    console.log("No one wins~");
-  }
-}
+// function gameResult() {
+//   if (humanScore > computerScore) {
+//     console.log("Congrats, you win the game!");
+//   } else if (computerScore > humanScore) {
+//     console.log("You lose... too bad...");
+//   } else {
+//     console.log("No one wins~");
+//   }
+// }
 
 
-playGame();
-gameResult();
+// playGame();
+// gameResult();
